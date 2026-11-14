@@ -1,0 +1,17 @@
+# Core Speech & Audio Libraries
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.14
+pyttsx3>=2.90
+
+# Networking & API Integration
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Information Retrieval & Knowledge Base
+wikipedia>=1.4.0
+
+# Windows System Audio Support
+audioop-lts>=0.2.0; python_version >= '3.13'
+comtypes>=1.4.0; sys_platform == 'win32'
+pywin32>=306; sys_platform == 'win32'
+

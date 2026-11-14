@@ -1,0 +1,53 @@
+{
+  "assistant_name": "Aura",
+  "user_name": "Arnav",
+  "wake_word": "hey assistant",
+  "wake_word_enabled": false,
+  "continuous_mode": true,
+  "speech": {
+    "voice_index": 0,
+    "speech_rate": 180,
+    "speech_volume": 1.0,
+    "mic_energy_threshold": 300,
+    "mic_dynamic_energy_threshold": true,
+    "listen_timeout": 5,
+    "phrase_time_limit": 8
+  },
+  "weather": {
+    "default_city": "Kolkata",
+    "units": "metric"
+  },
+  "email": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "contacts": {
+      "arnav": "arnav.sharma.dev@example.com",
+      "mentor": "mentor.oasis@example.com",
+      "support": "support@example.com",
+      "john": "john.doe@example.com"
+    }
+  },
+  "web_search": {
+    "default_engine": "google",
+    "browser_path": null
+  },
+  "custom_commands": {
+    "who created you": "I was developed by Arnav Sharma for the Oasis InfoByte Python Programming Internship.",
+    "who made you": "I was created by Arnav Sharma as a smart Python voice assistant.",
+    "what is your mission": "My mission is to assist you with voice automation, reminders, weather, emails, and daily productivity tasks.",
+    "what is your favorite programming language": "Python, without a doubt! It is clean, versatile, and powers my entire intelligence.",
+    "tell me a joke": "Why do programmers prefer dark mode? Because light attracts bugs!",
+    "open github": {
+      "action": "open_url",
+      "target": "https://github.com",
+      "response": "Opening GitHub in your default browser."
+    },
+    "open linkedin": {
+      "action": "open_url",
+      "target": "https://www.linkedin.com",
+      "response": "Opening LinkedIn in your default browser."
+    }
+  }
+}
+
