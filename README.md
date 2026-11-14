@@ -454,7 +454,5 @@ Privacy and data safety are foundational to this project:
 - **Evaluation Criteria Met**: 100% of Beginner & Advanced Tier Requirements
 - **Repository**: Ready for GitHub Submission
 
----
 
-*Developed with ❤️ in Python by Arnav Sharma.*
 
