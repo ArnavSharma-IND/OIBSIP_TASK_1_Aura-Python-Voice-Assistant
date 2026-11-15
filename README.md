@@ -1,458 +1,390 @@
-# 🎙️ Aura: Python Voice Assistant (`ArnavSharma_Task1`)
 
-[![Python Version](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Internship](https://img.shields.io/badge/Oasis%20InfoTech-Python%20Programming-orange.svg)](https://oasisinfobyte.com/)
-[![Tests](https://img.shields.io/badge/Tests-22%20Passed-brightgreen.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)]()
+<div align="center">
 
-> A modular, intelligent, desktop Python voice assistant implementing both **Beginner** and **Advanced Tier** requirements for Task 1 of the Oasis InfoTech Python Programming Internship. Capable of speech-to-text input, offline text-to-speech synthesis, Natural Language Understanding (NLU), multi-turn email automation, live weather forecasting, non-blocking voice reminders, desktop app launching, general knowledge retrieval, and custom commands.
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:090B1A,50:302060,100:00C6FF&text=AURA&fontSize=85&fontColor=FFFFFF&fontAlignY=38&desc=PYTHON%20VOICE%20ASSISTANT&descAlignY=60&descSize=18&animation=fadeIn" width="100%"/>
 
----
+### 🎙️ An Intelligent Desktop Voice Assistant
 
-## 📋 Table of Contents
+**Listen · Understand · Respond · Automate**
 
-1. [Project Overview](#1-project-overview)
-2. [Project Objectives](#2-project-objectives)
-3. [Features & Tier Checklist](#3-features--tier-checklist)
-4. [Technology Stack & Architecture](#4-technology-stack--architecture)
-5. [Directory Structure](#5-directory-structure)
-6. [Prerequisites & System Requirements](#6-prerequisites--system-requirements)
-7. [Step-by-Step Installation Guide](#7-step-by-step-installation-guide)
-8. [Virtual Environment Setup](#8-virtual-environment-setup)
-9. [Microphone & PyAudio Configuration](#9-microphone--pyaudio-configuration)
-10. [API Key Configuration (OpenWeatherMap)](#10-api-key-configuration-openweathermap)
-11. [SMTP Email Configuration](#11-smtp-email-configuration)
-12. [How to Run the Assistant](#12-how-to-run-the-assistant)
-13. [Example Voice Commands & Responses](#13-example-voice-commands--responses)
-14. [User Interface & Visual Screenshots](#14-user-interface--visual-screenshots)
-15. [Error Handling & Troubleshooting](#15-error-handling--troubleshooting)
-16. [Privacy, Data Handling & Security Considerations](#16-privacy-data-handling--security-considerations)
-17. [Future Enhancements](#17-future-enhancements)
-18. [Author & Submission Information](#18-author--submission-information)
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=650&lines=Your+Personal+Python+Voice+Assistant;Natural+Language+Understanding;Offline+Text-to-Speech+Engine;Smart+Reminders+%7C+Weather+%7C+Email+Automation" />
+
+<br/>
+
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-9B59FF?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Internship](https://img.shields.io/badge/Oasis-InfoTech-00C6FF?style=for-the-badge)](https://oasisinfobyte.com/)
+[![Tests](https://img.shields.io/badge/Tests-22_Passed-2ECC71?style=for-the-badge)]()
+
+<br/>
+
+<img src="https://img.shields.io/badge/GUI-Tkinter-7B61FF?style=flat-square"/>
+<img src="https://img.shields.io/badge/TTS-pyttsx3-00C6FF?style=flat-square"/>
+<img src="https://img.shields.io/badge/NLU-Custom_Engine-9B59FF?style=flat-square"/>
+<img src="https://img.shields.io/badge/Platform-Cross_Platform-FFFFFF?style=flat-square"/>
+
+</div>
 
 ---
 
-## 1. Project Overview
+<div align="center">
 
-**Aura** (`ArnavSharma_Task1`) is an intelligent, user-friendly desktop voice assistant developed in Python 3. It bridges the gap between simple command-matching scripts and conversational AI through a modular, decoupled architecture:
+## ✦ THE PROJECT
 
-- **Offline-First Text-to-Speech**: Employs `pyttsx3` running in a dedicated worker queue to speak every response without latency or internet dependency.
-- **Microphone Speech Recognition**: Utilizes `SpeechRecognition` backed by `PyAudio` with ambient noise calibration and a graceful text-typing fallback if audio hardware is absent.
-- **Natural Language Understanding (NLU)**: Employs token Jaccard similarity, regex extraction, and semantic scoring to understand free-form requests rather than brittle keyword matching.
-- **Multi-Turn Conversational Automation**: Solicits missing slots (recipient, subject, body) for email dispatch with a mandatory confirmation gate before transmission.
-- **Non-Blocking Background Reminders**: Executes background daemon threads that trigger pleasant audible chimes and spoken voice notifications when timers expire.
-- **Dual Interface**: Offers a sleek, dark-themed Tkinter GUI as well as interactive CLI and text-only console modes.
+</div>
 
----
+**Aura** is a modular Python-powered desktop voice assistant designed to bridge the gap between basic command-based automation and intelligent conversational interaction.
 
-## 2. Project Objectives
+Built as part of the **Oasis InfoTech Python Programming Internship**, Aura combines speech recognition, Natural Language Understanding, offline text-to-speech, and practical desktop automation.
 
-- **Develop a reliable conversational interface**: Seamlessly process spoken commands and respond using clear text-to-speech audio.
-- **Implement resilient error handling**: Prevent crashes when audio devices are disconnected, API keys are missing, or network connections drop.
-- **Ensure privacy and security**: Process audio in memory without saving audio recordings to disk, and prevent accidental credential leaks using environment variables and log sanitization.
-- **Maintain clean code and extensibility**: Adhere to PEP 8 standards, decouple concerns across dedicated modules, and allow non-programmers to add custom commands via `config.json`.
+It supports both beginner and advanced project requirements through a modular, extensible architecture.
 
----
+<div align="center">
 
-## 3. Features & Tier Checklist
+| 🎙️ Voice | 🧠 Intelligence | ⚡ Automation |
+|:---:|:---:|:---:|
+| Speech Recognition | Intent Detection | Email Automation |
+| Offline TTS | Entity Extraction | Smart Reminders |
+| Typed Fallback | Conversational Flow | Desktop Launcher |
 
-### Beginner Tier Features (All Implemented)
-- [x] **Microphone Capture**: Captures speech using `SpeechRecognition` and `PyAudio`.
-- [x] **Predefined Greetings**: Responds to "Hello", "Hi", "Hey" with personalized, time-of-day greetings ("Good morning", "Good afternoon", "Good evening").
-- [x] **Time & Date Reporting**: Tells the current 12-hour formatted time and calendar date in natural English.
-- [x] **Web Search**: Automatically launches the default browser with queries (Google, Bing, YouTube, GitHub).
-- [x] **Graceful Error Handling**: Detects unintelligible audio, service outages, and microphone disconnections, politely asking the user to repeat or type.
-- [x] **Text-to-Speech Spoken Feedback**: Spoken audio feedback using `pyttsx3` for every single response.
-
-### Advanced Tier Features (All Implemented)
-- [x] **Natural Language Understanding (NLU)**: Recognizes intents from free-form sentences using semantic scoring, entity regex extraction, and fuzzy token similarity.
-- [x] **Email Automation**: Dispatches emails via SMTP with contact alias resolution, multi-step slot filling, and mandatory voice confirmation ("Say yes to send or no to cancel").
-- [x] **Voice Reminders**: Schedules background daemon timers for custom durations ("30 seconds", "10 minutes", "1 hour"), triggers audible tones, and speaks reminder alerts.
-- [x] **Live Weather Forecasting**: Integrates OpenWeatherMap API to report temperature in Celsius, feels-like temperature, humidity, weather conditions, and wind speed.
-- [x] **General Knowledge QA**: Dual-layer question answering with a rich local offline encyclopedia supplemented by online Wikipedia API lookups.
-- [x] **Custom Commands**: Allows users to define custom voice triggers, canned replies, and app/URL launches in `config.json` without modifying Python code.
-- [x] **Privacy & Zero-Storage Architecture**: Strictly processes voice in RAM and discards it immediately; redacts credentials in rotating log files.
-
-### Additional Creative Features
-- [x] **Dual Desktop Interface**: Dark-themed Tkinter GUI with chat bubbles, quick-action chips, and typed input fallback, plus a console mode.
-- [x] **Desktop Application Launcher**: Opens native tools like Notepad, Calculator, Paint, Chrome, File Explorer, and Task Manager on command.
-- [x] **Active Reminders Manager**: Inspect and cancel active reminders ("what are my reminders?", "cancel all reminders").
-- [x] **System Status & Diagnostics**: Self-test diagnostic mode (`python main.py --test`) and live status command.
-- [x] **Graceful Voice Exit**: Terminates cleanly with a polite farewell on commands like "exit", "quit", "goodbye".
+</div>
 
 ---
 
-## 4. Technology Stack & Architecture
+## ◈ 01 — FEATURES
 
-### Core Technologies
-| Component | Technology | Description |
-| :--- | :--- | :--- |
-| **Language** | Python 3.9+ | Main programming language (tested on Python 3.13) |
-| **Speech-to-Text** | `SpeechRecognition` + `PyAudio` | Microphone audio capture and Google Speech Recognition |
-| **Text-to-Speech** | `pyttsx3` | Offline voice synthesis (Windows SAPI5 / Linux eSpeak) |
-| **GUI Framework** | `tkinter` & `ttk` | Built-in, zero-dependency desktop graphical interface |
-| **HTTP Requests** | `requests` | Weather API & network queries |
-| **Environment Secrets** | `python-dotenv` | Secure loading of API keys and credentials |
-| **Online Knowledge** | `wikipedia` | Summary extraction for general knowledge inquiries |
-| **Concurrency** | `threading` & `queue` | Non-blocking timers, background TTS, and decoupled GUI |
+<div align="center">
 
-### Architecture Diagram
+### Core Capabilities
 
-```
-+---------------------------------------------------------------------------------+
-|                                USER INTERFACES                                  |
-|   +-------------------------------------+   +-------------------------------+   |
-|   |         Tkinter Desktop GUI         |   |    Interactive Console / CLI  |   |
-|   | (Chat Bubbles, Mic Btn, Quick Chips)|   |   (Voice Loop & Typed Input)  |   |
-|   +------------------+------------------+   +---------------+---------------+   |
-+----------------------|--------------------------------------|-------------------+
-                       v                                      v
-+---------------------------------------------------------------------------------+
-|                           CORE ASSISTANT ORCHESTRATOR                           |
-|                               (modules/assistant.py)                            |
-|  - Dialog State Machine (Idle, Email Draft, Confirmation, Custom Command)       |
-|  - Multi-Service Router & Thread Management                                     |
-+--------------------------------------+------------------------------------------+
-                                       |
-    +----------------------------------+----------------------------------+
-    |                                  |                                  |
-    v                                  v                                  v
-+-----------------------+  +-----------------------+  +-----------------------+
-|  SPEECH I/O ENGINE    |  |     NLU & INTENT      |  |    SERVICE WORKERS    |
-|  (modules/speech.py)  |  |  (modules/intent.py)  |  |                       |
-|                       |  |                       |  | • WeatherService      |
-| • SpeechRecognizer    |  | • IntentEngine        |  | • EmailService (SMTP) |
-|   (PyAudio + Google)  |  | • Entity Extractor    |  | • ReminderManager     |
-| • TTSManager (Queue)  |  | • Utterance Bank      |  | • KnowledgeService    |
-|   (pyttsx3 offline)   |  | • Token Similarity    |  | • WebSearchService    |
-+-----------------------+  +-----------------------+  | • AppLauncher         |
-                                                      +-----------------------+
-                                                                  |
-                                                                  v
-                                                      +-----------------------+
-                                                      | CONFIG & PERSISTENCE  |
-                                                      | • config.json         |
-                                                      | • .env (Secrets)      |
-                                                      | • logs/assistant.log  |
-                                                      +-----------------------+
+</div>
+
+| Feature | Description | Status |
+|:---|:---|:---:|
+| 🎙️ Speech Recognition | Microphone input using SpeechRecognition and PyAudio | ✅ |
+| 🔊 Offline TTS | Natural spoken responses using pyttsx3 | ✅ |
+| 🧠 NLU Engine | Token similarity, regex extraction and semantic scoring | ✅ |
+| 📧 Email Automation | Multi-turn email drafting with confirmation | ✅ |
+| ⏰ Voice Reminders | Non-blocking background reminder system | ✅ |
+| 🌦️ Live Weather | OpenWeatherMap API integration | ✅ |
+| 🌐 Web Search | Google, Bing, YouTube and GitHub search | ✅ |
+| 📚 Knowledge QA | Offline knowledge base and Wikipedia integration | ✅ |
+| 🖥️ Desktop Launcher | Opens native desktop applications | ✅ |
+| ⚙️ Custom Commands | User-defined commands through config.json | ✅ |
+| 🔍 Diagnostics | Automated self-test and system status | ✅ |
+| 🪟 Desktop GUI | Dark-themed Tkinter interface | ✅ |
+
+### Interface Highlights
+
+- Interactive chat bubbles
+- Quick-action command chips
+- Microphone controls
+- Typed command fallback
+- Voice mute functionality
+- Real-time assistant responses
+
+---
+
+## ◈ 02 — SYSTEM ARCHITECTURE
+
+<div align="center">
+
+### Modular Architecture
+
+</div>
+
+```text
+                  ┌────────────────────────────┐
+                  │        USER INPUT          │
+                  │                            │
+                  │   Voice / Keyboard / GUI   │
+                  └──────────────┬─────────────┘
+                                 │
+                                 ▼
+                  ┌────────────────────────────┐
+                  │     ASSISTANT ENGINE       │
+                  │                            │
+                  │   Dialog State Management  │
+                  │   Request Orchestration    │
+                  └──────────────┬─────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+      ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+      │  SPEECH I/O  │   │  NLU ENGINE  │   │  SERVICES    │
+      │              │   │              │   │              │
+      │ Speech-to-   │   │ Intent       │   │ Weather      │
+      │ Text         │   │ Detection    │   │ Email        │
+      │              │   │              │   │ Reminders    │
+      │ Text-to-     │   │ Entity       │   │ Knowledge    │
+      │ Speech       │   │ Extraction   │   │ Web Search   │
+      └──────────────┘   └──────────────┘   └──────────────┘
+                                 │
+                                 ▼
+                  ┌────────────────────────────┐
+                  │      CONFIGURATION         │
+                  │                            │
+                  │   config.json              │
+                  │   .env                     │
+                  │   Sanitized Logs           │
+                  └────────────────────────────┘
 ```
 
 ---
 
-## 5. Directory Structure
+## ◈ 03 — TECHNOLOGY STACK
+
+<div align="center">
+
+### Built With
+
+<img src="https://skillicons.dev/icons?i=python,git,github,vscode&theme=dark" />
+
+</div>
+
+| Component | Technology |
+|:---|:---|
+| Programming Language | Python 3.9+ |
+| Speech Recognition | SpeechRecognition, PyAudio |
+| Text-to-Speech | pyttsx3 |
+| Desktop GUI | Tkinter, ttk |
+| API Integration | Requests |
+| Environment Management | python-dotenv |
+| Knowledge Retrieval | Wikipedia API |
+| Concurrency | Threading, Queue |
+| Testing | Python unittest |
+
+---
+
+## ◈ 04 — PROJECT STRUCTURE
 
 ```text
 ArnavSharma_Task1/
 │
-├── main.py                     # Primary entry point (GUI, CLI, Text-Only, Diagnostics)
-├── config.json                 # User settings, contact aliases, and custom commands
-├── .env.example                # Template for API keys and email credentials
-├── .gitignore                  # Git exclusion rules (ignores .env, venvs, logs)
-├── requirements.txt            # Python dependencies
-├── README.md                   # Comprehensive documentation and guide
+├── main.py
+├── config.json
+├── .env.example
+├── .gitignore
+├── requirements.txt
+├── README.md
 │
-├── modules/                    # Modular service components
-│   ├── __init__.py             # Package exports
-│   ├── assistant.py            # Core VoiceAssistant orchestrator and dialog manager
-│   ├── speech.py               # SpeechRecognizer and thread-safe TTSManager
-│   ├── intent.py               # Natural Language Understanding & intent classifier
-│   ├── weather.py              # OpenWeatherMap live weather integration
-│   ├── email_service.py        # SMTP email dispatcher with slot filling & confirmation
-│   ├── reminders.py            # Background thread reminders with audible alert chime
-│   ├── web_search.py           # Web browser automation and engine queries
-│   ├── knowledge.py            # Dual-layer QA (offline curated encyclopedia + Wikipedia)
-│   ├── app_launcher.py         # Windows desktop application launcher
-│   └── gui.py                  # Tkinter dark-themed desktop graphical interface
-│
-├── utils/                      # Helper and system utilities
-│   ├── __init__.py             # Utility package exports
-│   ├── helpers.py              # Time, natural speech, duration, and text helpers
-│   └── logger.py               # Thread-safe sanitized logger with credential redaction
-│
-├── tests/                      # Automated unit test suite
+├── modules/
 │   ├── __init__.py
-│   └── test_assistant.py       # 22 comprehensive unit tests covering all features
+│   ├── assistant.py
+│   ├── speech.py
+│   ├── intent.py
+│   ├── weather.py
+│   ├── email_service.py
+│   ├── reminders.py
+│   ├── web_search.py
+│   ├── knowledge.py
+│   ├── app_launcher.py
+│   └── gui.py
 │
-└── assets/                     # Media and screenshots
+├── utils/
+│   ├── __init__.py
+│   ├── helpers.py
+│   └── logger.py
+│
+├── tests/
+│   ├── __init__.py
+│   └── test_assistant.py
+│
+└── assets/
     └── screenshots/
-        └── README.md           # Visual interface preview and mockups
 ```
 
 ---
 
-## 6. Prerequisites & System Requirements
+## ◈ 05 — INSTALLATION
 
-- **Operating System**: Windows 10/11 (fully supported with SAPI5 TTS, `winsound`, and app launcher), Linux, or macOS.
-- **Python**: Python 3.9 through Python 3.13.
-- **Hardware**: Working microphone and speakers / headphones.
-- **Internet**: Required for online speech recognition, live weather, and Wikipedia. (The assistant includes offline local knowledge and typed fallback if disconnected).
+### 1. Clone the Repository
 
----
-
-## 7. Step-by-Step Installation Guide
-
-### Step 1: Open Terminal in Project Directory
-Navigate to the root directory `ArnavSharma_Task1`:
 ```bash
-cd "c:\Users\Arnav Sharma\Desktop\Resume\Internship\Oaisis Info Tech Python Programming\ArnavSharma_Task1"
+git clone https://github.com/ArnavSharma-IND/ArnavSharma_Task1.git
+
+cd ArnavSharma_Task1
 ```
 
-### Step 2: Create a Virtual Environment
+### 2. Create a Virtual Environment
+
 ```bash
 python -m venv .venv
 ```
 
-### Step 3: Activate the Virtual Environment
-- **Windows (Command Prompt / PowerShell)**:
-  ```powershell
-  .\.venv\Scripts\activate
-  ```
-- **Linux / macOS**:
-  ```bash
-  source .venv/bin/activate
-  ```
+### 3. Activate Environment
 
-### Step 4: Install Dependencies
+**Windows**
+
+```powershell
+.\.venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+### 4. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 8. Virtual Environment Setup
+## ◈ 06 — CONFIGURATION
 
-Using a virtual environment guarantees that your global Python installation remains clean and prevents package conflicts:
+### OpenWeatherMap API
 
-```bash
-# Verify virtual environment activation
-python -c "import sys; print('Using Virtual Env:', sys.prefix != sys.base_prefix)"
+1. Create an account at [OpenWeatherMap](https://home.openweathermap.org/users/sign_up).
+2. Generate an API key.
+3. Copy `.env.example` to `.env`.
+4. Add your API key:
+
+```env
+OPENWEATHER_API_KEY=your_api_key
 ```
 
-Expected output:
-```text
-Using Virtual Env: True
+### Gmail SMTP Configuration
+
+1. Enable Google 2-Step Verification.
+2. Generate an App Password.
+3. Configure your `.env`:
+
+```env
+SMTP_EMAIL=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USE_TLS=True
 ```
+
+**Security:** Never commit your `.env` file or expose credentials in your repository.
 
 ---
 
-## 9. Microphone & PyAudio Configuration
+## ◈ 07 — RUNNING AURA
 
-### Windows Installation
-`PyAudio` is included in `requirements.txt`. On Python 3.13 for Windows, pre-compiled wheels install directly via `pip`:
-```bash
-pip install PyAudio
-```
-
-*Note: If `pip install pyaudio` fails on an older Python version, install the Windows C++ Build Tools or download a pre-built wheel from Christoph Gohlke's Python extension repository.*
-
-### Linux (Ubuntu/Debian)
-Install PortAudio development headers before installing PyAudio:
-```bash
-sudo apt-get update
-sudo apt-get install python3-pyaudio portaudio19-dev libespeak1
-pip install PyAudio
-```
-
-### macOS
-Install PortAudio using Homebrew:
-```bash
-brew install portaudio
-pip install PyAudio
-```
-
-### Audio Input Verification
-To test if your microphone is detected by Python:
-```bash
-python main.py --test
-```
-If no microphone is attached, the assistant will automatically switch to **Typed Input Fallback Mode** so you can continue testing all features without hardware.
+| Mode | Command | Purpose |
+|:---|:---|:---|
+| Desktop GUI | `python main.py` | Launch graphical interface |
+| CLI | `python main.py --cli` | Interactive voice console |
+| Text Only | `python main.py --text-only` | Keyboard interaction |
+| Diagnostics | `python main.py --test` | Run system tests |
 
 ---
 
-## 10. API Key Configuration (OpenWeatherMap)
+## ◈ 08 — COMMAND SHOWCASE
 
-The assistant uses the **OpenWeatherMap API** to fetch real-time temperatures, humidity, and weather conditions.
+<div align="center">
 
-1. Create a free account at [OpenWeatherMap Sign-Up](https://home.openweathermap.org/users/sign_up).
-2. Go to **API Keys** and generate a free API key.
-3. Copy `.env.example` to `.env`:
-   ```bash
-   copy .env.example .env
-   ```
-4. Open `.env` and paste your API key:
-   ```env
-   OPENWEATHER_API_KEY=your_actual_32_character_api_key_here
-   ```
+### Talk to Aura
 
-*Graceful Degradation Note: If no API key is provided, the assistant politely informs you how to set up `.env` without crashing.*
+</div>
 
----
-
-## 11. SMTP Email Configuration
-
-The assistant includes voice-guided email automation using Python's built-in `smtplib`.
-
-### Configuration Steps (For Gmail)
-1. Go to your [Google Account Security Settings](https://myaccount.google.com/security).
-2. Ensure **2-Step Verification** is enabled.
-3. Under *2-Step Verification*, select **App passwords** (or visit [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)).
-4. Create an App password named `VoiceAssistant` and copy the 16-character code.
-5. In your `.env` file, configure your credentials:
-   ```env
-   SMTP_EMAIL=your_email@gmail.com
-   SMTP_PASSWORD=abcd efgh ijkl mnop
-   SMTP_SERVER=smtp.gmail.com
-   SMTP_PORT=587
-   SMTP_USE_TLS=True
-   ```
-
-### Safe Simulated (Dry-Run) Mode
-If you do not configure an SMTP password, the assistant automatically switches to **Dry-Run Mode**. It logs and speaks:
-> *"Simulated email sent to arnav.sharma.dev@example.com with subject 'Project Review'..."*
-
-This allows for safe demonstrations and grading without risking account lockouts.
+| You Say | Aura Responds |
+|:---|:---|
+| "Hello Aura" | Personalized greeting |
+| "What time is it?" | Current time |
+| "What's today's date?" | Current date |
+| "What's the weather in Kolkata?" | Live weather information |
+| "Remind me to study after 10 minutes" | Creates a reminder |
+| "What are my reminders?" | Lists active reminders |
+| "Search Python tutorials" | Opens browser search |
+| "Open Calculator" | Launches Calculator |
+| "Who is Albert Einstein?" | General knowledge response |
+| "Send an email to Arnav" | Starts guided email workflow |
+| "Goodbye" | Terminates the assistant |
 
 ---
 
-## 12. How to Run the Assistant
+## ◈ 09 — USER INTERFACE
 
-The application supports four execution modes:
+<div align="center">
 
-### Mode 1: Desktop Graphical User Interface (Default)
-```bash
-python main.py
-```
-*Launches the modern dark-themed Tkinter GUI featuring status indicators, real-time message bubbles, quick-action chips, and interactive microphone triggers.*
+### Desktop Experience
 
-### Mode 2: Interactive Voice & Console Mode
-```bash
-python main.py --cli
-```
-*Runs directly inside your terminal, capturing spoken audio from the microphone while displaying colored output.*
+<!-- Add your actual screenshots inside assets/screenshots/ -->
 
-### Mode 3: Text-Only Terminal Mode (No Microphone Required)
-```bash
-python main.py --text-only
-```
-*Disables the microphone listener and lets you interact by typing queries directly. Ideal for quiet office environments or automated tests.*
+<img src="https://placehold.co/900x480/101426/00D9FF?text=AURA+DESKTOP+INTERFACE" width="90%" alt="Aura Desktop GUI placeholder"/>
 
-### Mode 4: Self-Test Diagnostics
+<sub>Replace the placeholder above with your actual application screenshot.</sub>
+
+</div>
+
+---
+
+## ◈ 10 — PRIVACY & SECURITY
+
+Aura incorporates several privacy-conscious design choices:
+
+- **No persistent audio recordings:** Audio is processed in memory and discarded.
+- **Environment-based secrets:** API keys and SMTP credentials are stored in `.env`.
+- **Sanitized logs:** Sensitive information is redacted before logging.
+- **Confirmation-based email:** Email transmission requires explicit user confirmation.
+- **Graceful fallback:** Missing hardware and unavailable APIs are handled without crashing.
+
+---
+
+## ◈ 11 — TESTING & RELIABILITY
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Automated_Tests-22_Passed-2ECC71?style=for-the-badge&logo=pytest&logoColor=white"/>
+
+</div>
+
+Run the diagnostic suite:
+
 ```bash
 python main.py --test
 ```
-*Performs an automated health check across all submodules, APIs, audio devices, and intent parsers.*
+
+The project includes 22 unit tests covering the assistant's core functionality.
 
 ---
 
-## 13. Example Voice Commands & Responses
+## ◈ 12 — FUTURE ROADMAP
 
-| Category | Example Voice Command | Expected Assistant Response |
-| :--- | :--- | :--- |
-| **Greeting** | *"Hello Aura"* | *"Good evening, Arnav! How can I assist you tonight?"* |
-| **Current Time** | *"What time is it?"* | *"The current time is 11:30 PM."* |
-| **Current Date** | *"What is today's date?"* | *"Today is Friday, November 13th, 2026."* |
-| **Live Weather** | *"What's the weather in Kolkata?"* | *"The current weather in Kolkata is 27 degrees Celsius with clear skies. Humidity is at 65%..."* |
-| **Web Search** | *"Search for Python machine learning tutorials"* | *"Searching the web for Python machine learning tutorials."* *(Opens browser)* |
-| **Set Reminder** | *"Remind me to study after 10 minutes"* | *"Your reminder has been successfully set for 10 minutes."* |
-| **List Reminders**| *"What are my reminders?"* | *"You have 1 active reminder. Number 1: study, due in 9 minutes and 50 seconds."* |
-| **General QA** | *"Who is Albert Einstein?"* | *"Albert Einstein was a German-born theoretical physicist... known for developing the theory of relativity..."* |
-| **Knowledge QA**| *"What is photosynthesis?"* | *"Photosynthesis is the biological process used by plants... to convert light energy into chemical energy..."* |
-| **Open App** | *"Open Calculator"* | *"Opening Calculator."* *(Launches `calc.exe`)* |
-| **Custom Command**| *"Who created you?"* | *"I was developed by Arnav Sharma for the Oasis InfoByte Python Programming Internship."* |
-| **Email Flow** | *"Send an email to Arnav"* | *(Step 1)* *"What is the subject of the email?"*<br>*(Step 2)* *"What message would you like to send?"*<br>*(Step 3)* *"I am ready to send your email to ... Would you like me to send it? Say yes or no."* |
-| **Help Menu** | *"Help"* | *"Here is what I can do for you, Arnav: 1. Tell time and date. 2. Fetch live weather..."* |
-| **Exit** | *"Goodbye"* | *"Goodbye Arnav! Have a wonderful day."* *(Terminates cleanly)* |
+| Enhancement | Status |
+|:---|:---:|
+| Offline Wake-Word Detection | 🔜 Planned |
+| Local LLM Integration | 🔜 Planned |
+| Smart Home Automation | 🔜 Planned |
+| Google Calendar Synchronization | 🔜 Planned |
 
 ---
 
-## 14. User Interface & Visual Screenshots
+## ◈ 13 — DEVELOPER
 
-### Desktop GUI Layout
-The GUI is designed with a modern dark theme inspired by Discord and VS Code:
+<div align="center">
 
-```text
-+---------------------------------------------------------------+
-|  🎙️ Aura Voice Assistant                         🟢 Ready    |
-|  Built by Arnav Sharma | Oasis InfoTech Internship            |
-+---------------------------------------------------------------+
-|  [🕒 Time]  [📅 Date]  [⛅ Weather]  [⏰ 10s Timer]  [❓ Help]  |
-+---------------------------------------------------------------+
-|                                                               |
-|  🎙️ Aura: Good evening, Arnav! I am Aura, your personal       |
-|           Python voice assistant. How may I help you?         |
-|                                                               |
-|  👤 You: what time is it                                      |
-|                                                               |
-|  🎙️ Aura: The current time is 11:31 PM.                       |
-|                                                               |
-|  👤 You: remind me to study after 10 minutes                  |
-|                                                               |
-|  🎙️ Aura: Your reminder has been successfully set for        |
-|           10 minutes.                                         |
-|                                                               |
-|  👤 You: search for Python machine learning tutorials         |
-|                                                               |
-|  🎙️ Aura: Searching the web for python machine learning       |
-|           tutorials.                                          |
-|                                                               |
-|  ⏰ Alert: Reminder alert! You asked me to: study.            |
-|                                                               |
-+---------------------------------------------------------------+
-|  [ 🎙️ Speak ] [ Type a command here...             ] [ Send ] |
-|                                             [ ] Mute Voice    |
-+---------------------------------------------------------------+
-```
+<img src="https://capsule-render.vercel.app/api?type=rect&height=100&color=0:17142D,100:31215B&text=ARNAV%20SHARMA&fontSize=35&fontColor=FFFFFF&fontAlignY=55"/>
 
-For instructions on adding screenshots, see [assets/screenshots/README.md](file:///c:/Users/Arnav%20Sharma/Desktop/Resume/Internship/Oaisis%20Info%20Tech%20Python%20Programming/ArnavSharma_Task1/assets/screenshots/README.md).
+### Arnav Sharma
 
----
+**Python Developer | Computer Science & Artificial Intelligence**
 
-## 15. Error Handling & Troubleshooting
+<br/>
 
-| Issue / Error | Root Cause | Solution |
-| :--- | :--- | :--- |
-| **"Microphone is unavailable"** | No microphone detected or audio permissions denied. | Assistant automatically defaults to keyboard input. You can type commands in the text box. Check Windows Sound settings. |
-| **"Speech recognition service unavailable"** | Google Speech Recognition API unreachable due to network outage. | Verify your internet connection. You can use `--text-only` mode while offline. |
-| **"OpenWeatherMap API key is not configured"** | Missing `OPENWEATHER_API_KEY` in `.env`. | Create a `.env` file from `.env.example` and add your free key from [openweathermap.org](https://openweathermap.org). |
-| **"SMTP authentication failed"** | Standard Gmail password used instead of an App Password. | Generate a 16-character App Password at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords). |
-| **"pyttsx3 engine initialization error"** | Missing SAPI5 on Windows or eSpeak on Linux. | On Ubuntu/Debian, run `sudo apt-get install libespeak1`. On Windows, ensure Windows Audio service is running. |
+[![GitHub](https://img.shields.io/badge/GitHub-ArnavSharma--IND-181717?style=for-the-badge&logo=github)](https://github.com/ArnavSharma-IND)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/arnav-sharma-dev/)
 
----
+<br/>
 
-## 16. Privacy, Data Handling & Security Considerations
+**Project:** Aura — Python Voice Assistant
 
-Privacy and data safety are foundational to this project:
+**Internship:** Oasis InfoTech — Python Programming
 
-1. **Zero Persistent Audio Recording**:
-   - Voice input is captured exclusively in a volatile in-memory buffer by `SpeechRecognition`.
-   - Audio is streamed to the speech recognizer and **immediately discarded**. No audio files (.wav, .mp3) are written to disk.
-2. **Credential Protection**:
-   - Sensitive credentials (API keys, email addresses, passwords) are loaded exclusively through environment variables using `.env`.
-   - The `.gitignore` file strictly excludes `.env` and sensitive key formats from being committed to Git.
-3. **Log Sanitization**:
-   - Application logs (`logs/assistant.log`) pass through a custom `SanitizedFilter` that scrubs passwords, API keys, and email addresses before writing to disk.
-4. **Voice Confirmation Gate**:
-   - Outbound actions (such as sending emails) require explicit voice or text confirmation before execution.
+**Submission:** Beginner & Advanced Tier Requirements
 
----
+<br/>
 
-## 17. Future Enhancements
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:090B1A,50:302060,100:00C6FF&section=footer"/>
 
-- [ ] **Offline Wake-Word Detection**: Integrate Porcupine or Snowboy for local low-power wake-word activation.
-- [ ] **Local LLM Integration**: Incorporate a quantized local model (via Ollama or llama.cpp) for conversational dialogue.
-- [ ] **Smart Home Automation**: Add MQTT / Home Assistant integration to control smart lights and smart plugs.
-- [ ] **Calendar Synchronization**: Connect Google Calendar API to read and create daily agenda events.
-
----
-
-## 18. Author & Submission Information
-
-- **Developer**: Arnav Sharma
-- **Project**: Python Voice Assistant (`ArnavSharma_Task1`)
-- **Internship**: Oasis InfoTech Python Programming Internship
-- **Evaluation Criteria Met**: 100% of Beginner & Advanced Tier Requirements
-- **Repository**: Ready for GitHub Submission
-
-
-
+</div>
